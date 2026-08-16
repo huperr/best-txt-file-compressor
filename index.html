@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>no fuck off</title>
+</head>
+<body>
+    <h1>cool txt compressor</h1>
+    <p>this shit randomly deletes thing in ur file!! very smart idea i know i know</p>
+    <input type="file" id="input" accept=".txt">
+    <pre id="output"></pre>
+    <script>
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+    let text = "";
+    input.addEventListener("change", async () => {
+      const file = input.files[0]
+      if (!file) return;
+      text = await file.text();
+      for (let a = 0; a < text.length && text.length > 0; a++) {
+        const index = Math.floor(Math.random() * (text.length/2)); //only delete half because i am not that evil
+        text = text.slice(0, index) + text.slice(index + 1);
+      }
+      output.textContent = text;
+      const file_name = ["iwashere","hello","yoman","thanksforusing","imsorry","gulp","orpa","no","compressedfile","acu","thx","thing","dang","omg","hello2","something","wawawawawawawawawawawawawawawawa","cabaiuwcbsaiu","dadbshdbhsb"] //random Shit..
+      const thing = file_name[Math.floor(Math.random() * file_name.length)]
+      const blob = new Blob([text], {type: 'text/plain'})
+      let link = document.createElement('a');
+      link.download = thing
+      link.href = URL.createObjectURL(blob);
+      link.click();
+      console.log("hi") //hi
+    });
+    </script>
+</body>
+</html>
