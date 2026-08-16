@@ -6,6 +6,8 @@
 <body>
     <h1>cool txt compressor</h1>
     <p>this shit randomly deletes thing in ur file!! very smart idea i know i know</p>
+    <p>heres prove that this compressor works wooohhh</p>
+    <img src="image.png">
     <input type="file" id="input" accept=".txt">
     <pre id="output"></pre>
     <script>
@@ -21,7 +23,7 @@
         text = text.slice(0, index) + text.slice(index + 1);
       }
       output.textContent = text;
-      const file_name = ["iwashere","hello","yoman","thanksforusing","imsorry","gulp","orpa","no","compressedfile","acu","thx","thing","dang","omg","hello2","something","wawawawawawawawawawawawawawawawa","cabaiuwcbsaiu","dadbshdbhsb"] //random Shit..
+      const file_name = ["iwashere","ghuajbcjbcjsbcj","uwdjsjancjacjnjcnajn","uwu","hello","yoman","thanksforusing","imsorry","gulp","orpa","no","compressedfile","acu","thx","thing","dang","omg","hello2","something","wawawawawawawawawawawawawawawawa","cabaiuwcbsaiu","dadbshdbhsb"] //random Shit..
       const thing = file_name[Math.floor(Math.random() * file_name.length)]
       const blob = new Blob([text], {type: 'text/plain'})
       let link = document.createElement('a');
